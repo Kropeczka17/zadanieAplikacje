@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="graphics\logo_pic.png">
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Akaya+Telivigala&display=swap" rel="stylesheet">
+        <title>Kurs JS dla laików</title>
+    </head>
+    <body>
+            <div id="container">
+                <div id="logo">
+                    <a href="index.html"><span class="litera">J</span>ava<span class="litera">S</span>cript dla każdego</a>
+                </div>
+                <div id="menu">
+                    <p><a href="index.html"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png" alt="Logo firmy"></a></p>
+                    <p><a href="index.html">Start</a></p>
+                    <p><a href="kurs.html">Kurs</a></p>
+                    <p><a href="literatura.html">Literatura</a></p>
+                    <p><a href="other.html">Inne kursy</a></p>
+                    <p><a href="contact.html">Kontakt</a></p>
+                </div>
+                <div id="Kurs_content">
+                    <p><span class="pierwszaL">Z</span>acznijmy może od tego, od czego zgodnie
+                    z koderską tradycją zaczyna się każdy kurs programowania. Mianowicie, wyświelmy
+                    napis <i>Hello World</i> na ekranie. Aby to zrobić posłyżymy się zwrotem <code>
+                    document.write()</code>, gdzie w nawiasie, w cudzysłowie wpiszemy nasz tekst.
+                    Użyty przez nas kod będzie wyglądał następująco: <br>
+                    
+                    <div class="code">
+                        <code>
+                            <pre>
+ &#60;script&#62;
+     document.write("Hello World");
+ &#60;/script&#62;</pre>
+                        </code>
+                    </div>
+
+                    A efekt działania wyglądał tak: <br><br>
+
+                    <script>
+                        document.write("Hallo World");
+                    </script>
+
+                    <p>Teraz spróbujmy pokazać to samo za pomocą wyskakującego okienka. W tym celu użyjemy 
+                    <code>alert()</code>:
+                    
+                    <div class="code">
+                        <code>
+                            <pre>
+ &#60;script&#62;
+     alert("Hello World");
+ &#60;/script&#62;</pre>
+                        </code>
+                    </div>
+                    
+                    Efekt działania możesz zaobserwować klikając w poniższy przycisk: <br>
+
+                    <form action="POST">
+                        <input type="button" value="Przysisk" onclick="alert('Hello World')">
+                    </form>
+
+                    <br><br>
+                    <p><span class="pierwszaL">S</span>koro umiemy już wyświetlać tekst na ekranie, napiszmy
+                    prosty skrypt, który wczyta imię użytkownika, a następnie wyświetli je na ekranie. Do wczytania
+                    danych (czyli imienia) posłużymy się zwrotem <code>prompt()</code>. Wykonując to zadanie, będziemy
+                    także musieli ustalić zmienną (szufladkę, w której umieścimy imię) za pomocą słówka
+                    <code>let</code> oraz jej nazwę:
+
+                    <div class="code">
+                        <code>
+                            <pre>
+ &#60;script&#62;
+     let imie = prompt("Podaj swoje imie: ");
+     document.write(imie);
+ &#60;/script&#62;</pre>
+                        </code>
+                    </div>
+
+                    Efekt działania możesz zaobserwować klikając w poniższy przycisk (aby powrócić tu odśwież stronę): <br>
+
+                    <form action="POST">
+                        <input type="button" value="Przysisk" onclick="let imie = prompt('Podaj swoje imie: '); document.write(imie);">
+                    </form>
+                    <br>
+                    Okej. Udało się nam wczytać dane i wyświetlić je na ekranie. Teraz włączmy w to trochę matematyki.
+                    Do wykonywania podstawowych operacji matematycznych służą operatory matematyczne:
+                    <ul>
+                        <li>'+' - dodawanie</li>
+                        <li>'-' - odejmowanie</li>
+                        <li>'*' - mnożenie</li>
+                        <li>'/' - dzielenie</li>
+                        <li>'%' - reszta z dzielenia (modulo)</li>
+                    </ul>
+                    Aby można było dokonywać operacji na liczbach wprowadzonych przez użytkownika najpierw trzeba te
+                    dane przekonwertować z napisu na liczbę, ponieważ <code>prompt()</code> pobiera dane jako napis.
+                    Żeby przekonwertować napis na liczbę, należy prompt umieścić wewnątrz funkcji <code>parseInt</code>
+                    (dla liczb całkowitych) lub <code>parseFloat</code> (dla liczb z ułamkiem). <br>
+                    Napiszmy teraz program, który wczyta dwie liczby podane przez użytkownika, a następnie wykona wszystkie
+                    pięć wspomnianych wyżej operacji matematycznych.
+
+                    <div class="code">
+                        <code>
+                            <pre>
+ &#60;script&#62;
+     let x = parseInt(prompt("Podaj pierwsza liczbe: "));
+     let y = parseInt(prompt("Podaj druga liczbe: "));
+     document.write("dodawanie: " + (x+y) + "&#60;br&#62;");
+     document.write("odejmowanie: " + (x-y) + "&#60;br&#62;"));
+     document.write("mnozenie: " + (x*y) + "&#60;br&#62;"));
+     document.write("dzielenie: " + (x/y) + "&#60;br&#62;"));
+     document.write("modulo: " + (x%y) + "&#60;br&#62;"));
+ &#60;/script&#62;</pre>
+                        </code>
+                    </div>
+
+                    <code>&#60;br&#62; to znacznik przejścia do nowej linii.</code><br>
+                    Efekt działania możesz zaobserwować klikając w poniższy przycisk (aby powrócić tu odśwież stronę): <br>
+
+                    <form action="POST">
+                        <input type="button" value="Przysisk" onclick="let x = parseInt(prompt('Podaj pierwsza liczbe: '));
+                        let y = parseInt(prompt('Podaj druga liczbe: '));
+                        document.write('dodawanie: ' + (x+y) +'<br>');
+                        document.write('odejmowanie: ' + (x-y) +'<br>');
+                        document.write('mnozenie: ' + (x*y) +'<br>');
+                        document.write('dzielenie: ' + (x/y) +'<br>');
+                        document.write('modulo: ' + (x%y) +'<br>');">
+                    </form>
+
+
+                </div>
+            </div>
+    </body>
+    </html>
+</body>
+</html>
